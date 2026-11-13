@@ -30,6 +30,19 @@ def best_student(db):
 
 def passed(score):
     return score >= PASS_SCORE
+def count_by_grade(db, letter):
+    """Подсчитывает студентов с указанной оценкой"""
+    count = 0
+
+    for scores in db.values():
+        avg = average(scores)
+
+        if grade(avg) == letter:
+            count += 1
+
+    return count
 if __name__ == "__main__":
     print("Проверка модуля grades")
     print(average([90, 80, 70]), grade(80), grade(45))
+    print("оценка A:", grade.count_by_grade(db, "A"))
+    print("оценка D:", grade.count_by_grade(db, "D"))

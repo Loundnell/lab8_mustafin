@@ -13,4 +13,6 @@ for name, scores in db.items():
 
 name, avg = grades.best_student(db)
 print(f"Лучший результат: {name} ({avg})")
+print("оценка A:", grades.count_by_grade(db, "A"))
+print("оценка D:", grades.count_by_grade(db, "D"))
 print()
